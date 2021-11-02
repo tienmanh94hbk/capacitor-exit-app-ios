@@ -1,6 +1,6 @@
 {
   "name": "capacitor-exit-app-ios",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "exit app on ios",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",
