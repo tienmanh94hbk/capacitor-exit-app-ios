@@ -1,17 +1,23 @@
 import Foundation
 import Capacitor
 
-/**
- * Please read the Capacitor iOS Plugin Development Guide
- * here: https://capacitorjs.com/docs/plugins/ios
- */
 @objc(ExitAppIosPlugin)
 public class ExitAppIosPlugin: CAPPlugin {
-
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.success([
-            "value": value
-        ])
+    @objc func killApp(_ call: CAPPluginCall) {
+        DispatchQueue.main.async {
+        }
+        return MinimizeOrKillApp();
+    }
+    
+    @IBAction func MinimizeOrKillApp(){
+        
+        DispatchQueue.main.async {
+           // UI work here
+            UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
+            //Comment if you want to minimise app
+            Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { (timer) in
+                exit(0)
+            }
+        }
     }
 }
