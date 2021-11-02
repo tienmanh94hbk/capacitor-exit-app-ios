@@ -35,7 +35,7 @@ const { ExitAppIosPlugin } = Plugins;
 - `cd my-cap-app`
 - `mkdir www && touch www/index.html`
 - `npx cap add ios`
-- `npm install --save capacitor-fcm`
+- `npm i capacitor-exit-app-ios`
 - `npx cap sync ios` _(always do sync after a plugin install)_
 - `npx cap open ios`
 
